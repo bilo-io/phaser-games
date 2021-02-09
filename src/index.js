@@ -10,6 +10,23 @@ var sceneHeight = 600
 var player1
 var player2
 var ball
+const getLength = (obj) => {
+    return Math.sqrt(obj.x * obj.x + obj.y * obj.y)
+}
+
+const getPositionDiff = (obj1, obj2) => {
+    return {
+        x: obj1.x - obj2.x,
+        y: obj1.y - obj2.y
+    }
+}
+
+const getNormalized = (vector) => {
+    return {
+        x: vector.x / getLength(vector),
+        y: vector.y / getLength(vector),
+    }
+}
 class MyGame extends Phaser.Scene
 {
     constructor ()
@@ -32,7 +49,7 @@ class MyGame extends Phaser.Scene
         const playerPosition = 30
         const ballSpeed = 30
         const ballVelocity = {
-            x: Math.random() * ballSpeed * 12,
+            x: Math.min(0.5, Math.random()) * ballSpeed * 12,
             y: Math.random() * ballSpeed * 4
         }
         const enemyPosition = sceneWidth - playerDistance
@@ -78,12 +95,16 @@ class MyGame extends Phaser.Scene
         emitter2.startFollow(player2)
 
         this.physics.add.collider(player1, ball, (playerObj, ballObj) => {
+            const diff = getPositionDiff(ballObj, playerObj);
+            console.log('player1', diff)
             playerObj.setVelocityX(0)
-            ball.setVelocityX(ballVelocity.x)
+            ball.setVelocity(ballVelocity.x, getNormalized(diff).y * ballVelocity.y)
         })
         this.physics.add.collider(player2, ball, (playerObj, ballObj) => {
+            const diff = getPositionDiff(ballObj, playerObj);
+            console.log('player2', diff)
             playerObj.setVelocityX(0)
-            ball.setVelocityX(-ballVelocity.x)
+            ball.setVelocity(-ballVelocity.x, getNormalized(diff).y * ballVelocity.y)
         })
     }
 
