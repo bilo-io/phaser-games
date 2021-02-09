@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+ac16ec1a16f59a15321f711e364f1b6fad0e5a90 refs/remotes/origin/dependabot/npm_and_yarn/acorn-6.4.2
+f1300839c3ee06e61fc4c75de29d250101cb2c80 refs/remotes/origin/dependabot/npm_and_yarn/elliptic-6.5.3
+fc9087a19d1467082f71d57235ccf6a9bacf6d3e refs/remotes/origin/dependabot/npm_and_yarn/http-proxy-1.18.1
+1fdeb37d4d7c477c9776b0222698fd9cbca7b429 refs/remotes/origin/dependabot/npm_and_yarn/ini-1.3.8
+c41fbf8f7b3843cc16120d28daecd53126fe05a4 refs/remotes/origin/dependabot/npm_and_yarn/lodash-4.17.19
+3728a0da1ad5928f110ab913717af7afd0de6aad refs/remotes/origin/dependabot/npm_and_yarn/websocket-extensions-0.1.4
+017481e4c8f24ecb3fca58b5419147e1b5ca7f1e refs/remotes/origin/master
