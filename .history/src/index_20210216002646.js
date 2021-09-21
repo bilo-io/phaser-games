@@ -150,7 +150,7 @@ class MyGame extends Phaser.Scene
     update ()
     {
         // Winning condition
-        const winningScore = 10
+        const winningScore = 3
         if (player1Score >= winningScore) {
             console.log('player1 wins')
             this.resetGame()

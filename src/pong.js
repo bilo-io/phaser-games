@@ -58,7 +58,7 @@ class MyGame extends Phaser.Scene
 
     create ()
     {
-        const background = this.add.image(sceneWidth / 2,sceneHeight / 2, 'background');
+        const background = this.add.image(400,300, 'background');
         const playerDistance = 90
         const paddleSize = 38
         const ballSpeed = 40
@@ -115,7 +115,13 @@ class MyGame extends Phaser.Scene
                 scale: { start: 1, end: 0 },
                 blendMode: 'ADD'
             });
+            var emitter2 = particles.createEmitter({
+                speed: 100,
+                scale: { start: 1, end: 0 },
+                blendMode: 'ADD'
+            });
             emitter1.startFollow(player1)
+            emitter2.startFollow(player2)
         }
         //#endregion
 
